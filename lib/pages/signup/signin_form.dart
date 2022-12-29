@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:myemoji/responsive.dart';
 
 import '../../auth.dart';
 
@@ -73,6 +74,7 @@ class _SignInPageFormState extends State<SignInPageForm> {
             margin: const EdgeInsets.symmetric(vertical: 12),
             child: TextFormField(
               controller: emailController,
+              maxLines: 1,
               decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   floatingLabelStyle: TextStyle(),
@@ -94,6 +96,7 @@ class _SignInPageFormState extends State<SignInPageForm> {
           TextFormField(
             controller: passwordController,
             focusNode: passwordFocusNode,
+            maxLines: 1,
             obscureText: !isVisible,
             decoration: InputDecoration(
                 border: OutlineInputBorder(),
