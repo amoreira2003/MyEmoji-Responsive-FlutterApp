@@ -14,9 +14,12 @@ class _LoginFormFormState extends State<LoginForm> {
   final _formKey = GlobalKey<FormState>();
 
   String? errorMessage = '';
+  bool isVisible = false;
+  bool showPassWordIcon = false;
 
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  FocusNode passwordFocusNode = FocusNode();
 
   Future<void> signInWithEmailAndPassword() async {
     try {
@@ -37,6 +40,16 @@ class _LoginFormFormState extends State<LoginForm> {
 
   @override
   Widget build(BuildContext context) {
+    passwordFocusNode.addListener(
+      () {
+        if (passwordFocusNode.hasFocus) {
+          setState(() => showPassWordIcon = true);
+        } else {
+          setState(() => showPassWordIcon = false);
+        }
+      },
+    );
+
     return Form(
         key: _formKey,
         autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -69,10 +82,22 @@ class _LoginFormFormState extends State<LoginForm> {
               ),
               TextFormField(
                 controller: passwordController,
-                decoration: const InputDecoration(
+                focusNode: passwordFocusNode,
+                obscureText: !isVisible,
+                decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     hintText: "Use your password to sing-in",
-                    labelText: "Password"),
+                    labelText: "Password",
+                    suffix: showPassWordIcon
+                        ? IconButton(
+                            padding: EdgeInsets.zero,
+                            onPressed: () {
+                              setState(() => isVisible = !isVisible);
+                            },
+                            icon: Icon(isVisible
+                                ? Icons.visibility_outlined
+                                : Icons.visibility_off_outlined))
+                        : null),
                 validator: (value) {
                   if (value == "" || value == null) {
                     return "You need to type a password";
