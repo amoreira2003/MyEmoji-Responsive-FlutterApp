@@ -51,7 +51,7 @@ class HomeDisplayPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Text(
-                        "There is your emoji, ",
+                        "There is your emoji",
                         style: TextStyle(
                             color: Colors.black,
                             fontSize:
@@ -59,33 +59,39 @@ class HomeDisplayPage extends StatelessWidget {
                             fontWeight: FontWeight.bold),
                       ),
                       Container(
-                          width: Responsive.returnSize(context, 250, 300, 400),
-                          height: Responsive.returnSize(context, 250, 300, 400),
-                          decoration: const BoxDecoration(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(16))),
-                          child: Center(
-                            child: FutureBuilder(
-                                future: auth
-                                    .getAccountEmoji(auth.currentUser!.email),
-                                builder: (context, snapshot) => snapshot.hasData
-                                    ? Text(
-                                        snapshot.requireData,
-                                        style: TextStyle(
-                                            fontSize: Responsive.returnSize(
-                                                context, 80, 110, 120)),
-                                      )
-                                    : const Text("")),
-                          )),
+                        width: Responsive.returnSize(context, 250, 300, 400),
+                        height: Responsive.returnSize(context, 250, 300, 400),
+                        decoration: const BoxDecoration(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(16))),
+                        child: Center(
+                          child: FutureBuilder(
+                              future:
+                                  auth.getAccountEmoji(auth.currentUser!.email),
+                              builder: (context, snapshot) => snapshot.hasData
+                                  ? Text(
+                                      snapshot.requireData,
+                                      style: TextStyle(
+                                          fontSize: Responsive.returnSize(
+                                              context, 60, 80, 100)),
+                                    )
+                                  : const Text("")),
+                        ),
+                      ),
                       Text(
                         "We won't charge it back, your emoji, your problem",
                         style: TextStyle(
                             fontSize:
-                                Responsive.returnSize(context, 11, 20, 28)),
+                                Responsive.returnSize(context, 15, 20, 28)),
                       ),
                       TextButton(
                           onPressed: () => signOut(),
-                          child: const Text("Sing-out"))
+                          child: Text(
+                            "Sing-out",
+                            style: TextStyle(
+                                fontSize:
+                                    Responsive.returnSize(context, 15, 20, 28)),
+                          ))
                     ],
                   ),
                 )),
