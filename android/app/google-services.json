@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "229173053553",
+    "project_id": "myemojiflutter",
+    "storage_bucket": "myemojiflutter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:229173053553:android:bda800e8f76d480105b3d0",
+        "android_client_info": {
+          "package_name": "com.example.myemoji"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "229173053553-i1qgl8p5tv2k0gclbtdc4famf57p6rvs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBG5AVo9J226f6tFKrjTDUxx72PhHfFCgQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "229173053553-i1qgl8p5tv2k0gclbtdc4famf57p6rvs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
