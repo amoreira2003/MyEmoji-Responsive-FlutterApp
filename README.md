@@ -15,6 +15,8 @@ Esse projeto apresenta conceitos de **Flutter Responsivo**, **Async**, **Future*
 
 Esse projeto foi feito em <a href="https://flutter.dev" target="_blank">Flutter</a> com foco para Web, Android e IOS. <br> 
 
+Você pode conferir o projeto ao vivo <a href="https://myemojiflutter.web.app/#/" target="_blank">aqui!</a>
+
 O <a href="https://github.com/amoreira2003/MyEmoji-Responsive-FlutterApp" target="_blank">My Emoji</a> é um projeto para meu <a href="https://github.com/amoreira2003" target="_blank">portfólio</a> de **Front-End**
 
   <div>
