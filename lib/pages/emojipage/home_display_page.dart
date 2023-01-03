@@ -60,7 +60,6 @@ class HomeDisplayPage extends StatelessWidget {
                       ),
                       Container(
                         width: Responsive.returnSize(context, 250, 300, 400),
-                        height: Responsive.returnSize(context, 250, 300, 400),
                         decoration: const BoxDecoration(
                             borderRadius:
                                 BorderRadius.all(Radius.circular(16))),
@@ -73,7 +72,7 @@ class HomeDisplayPage extends StatelessWidget {
                                       snapshot.requireData,
                                       style: TextStyle(
                                           fontSize: Responsive.returnSize(
-                                              context, 60, 80, 100)),
+                                              context, 30, 40, 100)),
                                     )
                                   : const Text("")),
                         ),
