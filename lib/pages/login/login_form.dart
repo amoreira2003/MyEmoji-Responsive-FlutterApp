@@ -2,7 +2,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../../auth.dart';
-import '../../responsive.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({super.key});
@@ -88,7 +87,7 @@ class _LoginFormFormState extends State<LoginForm> {
                 maxLines: 1,
                 obscureText: !isVisible,
                 decoration: InputDecoration(
-                    border: OutlineInputBorder(),
+                    border: const OutlineInputBorder(),
                     hintText: "Use your password to sing-in",
                     labelText: "Password",
                     suffix: showPassWordIcon

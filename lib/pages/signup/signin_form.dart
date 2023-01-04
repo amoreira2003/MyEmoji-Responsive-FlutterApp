@@ -1,6 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:myemoji/responsive.dart';
 
 import '../../auth.dart';
 
@@ -99,7 +98,7 @@ class _SignInPageFormState extends State<SignInPageForm> {
             maxLines: 1,
             obscureText: !isVisible,
             decoration: InputDecoration(
-                border: OutlineInputBorder(),
+                border: const OutlineInputBorder(),
                 hintText: "Use your password to sing-in",
                 labelText: "Password",
                 suffix: showPassWordIcon
