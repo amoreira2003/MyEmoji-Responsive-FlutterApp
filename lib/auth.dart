@@ -1,3 +1,4 @@
+import 'dart:developer' as console;
 import 'dart:math';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -63,6 +64,8 @@ class Auth {
     };
     try {
       await db.collection('emojis').add(userData);
-    } catch (e) {}
+    } catch (e) {
+      console.log(e.toString());
+    }
   }
 }
