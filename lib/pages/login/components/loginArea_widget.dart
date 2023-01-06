@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../design_choices.dart';
+import '../../../constants.dart';
 import '../../../responsive.dart';
 import 'login_elements.dart';
 

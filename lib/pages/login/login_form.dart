@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 
 import '../../auth.dart';
 
+import '../../constants.dart';
+
 class LoginForm extends StatefulWidget {
   const LoginForm({super.key});
 
@@ -30,12 +32,6 @@ class _LoginFormFormState extends State<LoginForm> {
         errorMessage = e.message;
       });
     }
-  }
-
-  bool validateEmail(String? input) {
-    input = input ?? "";
-    final regExp = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');
-    return regExp.hasMatch(input);
   }
 
   @override
@@ -73,7 +69,7 @@ class _LoginFormFormState extends State<LoginForm> {
                       return "You need to type an email";
                     }
 
-                    if (!validateEmail(value)) {
+                    if (!validateRegexPatternEmail(value)) {
                       return "Invalid Email Address";
                     }
 
@@ -101,15 +97,7 @@ class _LoginFormFormState extends State<LoginForm> {
                                 : Icons.visibility_off_outlined))
                         : null),
                 validator: (value) {
-                  if (value == "" || value == null) {
-                    return "You need to type a password";
-                  }
-
-                  if (value.length <= 8) {
-                    return "Your password must be longer than 8 charactes";
-                  }
-
-                  return null;
+                  return validatePassword(value);
                 },
               ),
               Column(

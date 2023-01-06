@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:myemoji/design_choices.dart';
+import 'package:myemoji/constants.dart';
 import 'package:myemoji/pages/emojipage/home_display_page.dart';
 import 'package:myemoji/pages/login/login_page.dart';
 

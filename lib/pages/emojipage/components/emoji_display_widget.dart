@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../auth.dart';
-import '../../../design_choices.dart';
+import '../../../constants.dart';
 import '../../../responsive.dart';
 import 'emoji_display_elements.dart';
 

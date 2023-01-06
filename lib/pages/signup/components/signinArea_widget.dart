@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myemoji/responsive.dart';
 
-import '../../../design_choices.dart';
+import '../../../constants.dart';
 import 'signin_elements.dart';
 
 class SigninArea extends StatelessWidget {

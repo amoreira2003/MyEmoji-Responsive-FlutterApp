@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../../auth.dart';
+import '../../constants.dart';
 
 class SignInPageForm extends StatefulWidget {
   const SignInPageForm({super.key});
@@ -32,12 +33,6 @@ class _SignInPageFormState extends State<SignInPageForm> {
         setErrorMessage(e.message);
       });
     }
-  }
-
-  bool validateEmail(String? input) {
-    input = input ?? "";
-    final regExp = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');
-    return regExp.hasMatch(input);
   }
 
   Future<bool> validateEmailInUse(String input) async {
@@ -80,15 +75,7 @@ class _SignInPageFormState extends State<SignInPageForm> {
                   hintText: "Use your email to sing-in",
                   labelText: "Email"),
               validator: (value) {
-                if (value == "" || value == null) {
-                  return "You need to type an email";
-                }
-
-                if (!validateEmail(value)) {
-                  return "Invalid Email Address";
-                }
-
-                return null;
+                return validateInputEmail(value);
               },
             ),
           ),
@@ -112,15 +99,7 @@ class _SignInPageFormState extends State<SignInPageForm> {
                             : Icons.visibility_off_outlined))
                     : null),
             validator: (value) {
-              if (value == "" || value == null) {
-                return "You need to type a password";
-              }
-
-              if (value.length <= 8) {
-                return "Your password must be longer than 8 charactes";
-              }
-
-              return null;
+              return validatePassword(value);
             },
           ),
           Column(
